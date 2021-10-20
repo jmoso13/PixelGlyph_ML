@@ -1,1 +1,1 @@
-A project dedicated to ML exploration of [pixelglyphs](pixelglyphs.io)
+A project dedicated to ML exploration of [pixelglyphs](https://www.pixelglyphs.io)
