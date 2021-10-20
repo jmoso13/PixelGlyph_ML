@@ -7,7 +7,7 @@ import argparse
 
 #----------------------------------------------------------------------------
 
-with open('pixeldict.pkl','rb') as f:
+with open('data/pixeldict.pkl','rb') as f:
   pixeldict = pkl.load(f)
 
 #----------------------------------------------------------------------------

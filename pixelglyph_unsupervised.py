@@ -202,7 +202,7 @@ im.save(f'{model_name}_latent_space.png')
 
 
 # MATRIX ONLY
-with open('pixeldict.pkl','rb') as f:
+with open('data/pixeldict.pkl','rb') as f:
   pixeldict = pkl.load(f)
 
 matrices = np.array([pixeldict[i+1][0] for i in range(len(pixeldict))])

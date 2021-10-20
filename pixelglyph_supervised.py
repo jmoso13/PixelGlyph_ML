@@ -13,7 +13,7 @@ import shutil
 #----------------------------------------------------------------------------
 
 # Matrices
-with open('pixeldict.pkl','rb') as f:
+with open('data/pixeldict.pkl','rb') as f:
   pixeldict = pkl.load(f)  
 
 #----------------------------------------------------------------------------
@@ -108,10 +108,10 @@ def run(label_csv, small_glyph_dir, include_labels, use_matrices, return_top_n, 
 
     if num_epochs > 16:
       print('loading weights')
-      nn.load_weights(f'best_{model_name}.h5')
+      nn.load_weights(f'models/best_{model_name}.h5')
     else:
       print('saving weights')
-      nn.save_weights(f'best_{model_name}.h5')
+      nn.save_weights(f'models/best_{model_name}.h5')
 
   # Load model without training
   else:
@@ -157,10 +157,10 @@ def _str_to_bool(v):
 _examples = '''examples:
 
   # Train CNN on pixelglyphs, be sure to run pixelglyph_render.py first to populate a directory for small glyphs
-  python pixelglyph_supervsed.py --label-csv glyph_labels.csv --small-glyph-dir small_glyphs/ --use-matrices=no
+  python pixelglyph_supervsed.py --label-csv data/glyph_labels.csv --small-glyph-dir small_glyphs/ --use-matrices=no
 
   # Run rendering again without retraining (be sure to match --include-labels to appropriate model)
-  python pixelglyph_supervsed.py --label-csv glyph_labels.csv --small-glyph-dir small_glyphs/ --use-matrices=no --trained-weights pixelglyph_cnn.h5
+  python pixelglyph_supervsed.py --label-csv data/glyph_labels.csv --small-glyph-dir small_glyphs/ --use-matrices=no --trained-weights models/pixelglyph_cnn.h5
 
 '''
 

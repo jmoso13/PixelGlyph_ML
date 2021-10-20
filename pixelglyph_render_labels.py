@@ -10,9 +10,9 @@ import pandas as pd
 #----------------------------------------------------------------------------
 
 def main():
-  label_df = pd.read_csv(label_csv)
+  label_df = pd.read_csv('data/glyph_labels.csv')
 
-  with open('pixeldict.pkl','rb') as f:
+  with open('data/pixeldict.pkl','rb') as f:
     pixeldict = pkl.load(f)
 
   if not os.path.exists('label_investigation'):

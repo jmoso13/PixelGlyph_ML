@@ -43,4 +43,4 @@ def get_conv_multilabel_nn(original_dim, num_classes, model_name, num_filters=[3
 
 
 def get_model_callbacks(model_name, patience=100):
-  return EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=patience), ModelCheckpoint(f'best_{model_name}.h5', monitor='val_loss', verbose=0, save_best_only=True, save_weights_only=True, mode='auto', period=1)
+  return EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=patience), ModelCheckpoint(f'models/best_{model_name}.h5', monitor='val_loss', verbose=0, save_best_only=True, save_weights_only=True, mode='auto', period=1)
