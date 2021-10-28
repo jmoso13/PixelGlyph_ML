@@ -1,5 +1,6 @@
 from utils import get_conv_multilabel_nn, get_model_callbacks
 from pixelglyph_render import render_glyph
+from Keras.layers import Input
 import numpy as np
 from PIL import Image
 import pickle as pkl

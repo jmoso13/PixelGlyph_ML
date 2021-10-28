@@ -12,7 +12,7 @@ with open('data/pixeldict.pkl','rb') as f:
 
 #----------------------------------------------------------------------------
 
-def render_glyph(matrix, colors, loc, ppd=37):
+def render_glyph(matrix, colors, loc=None, ppd=37):
 
   def strip_color(color):
     r,g,b = re.findall("([0-9]+|[A-Z])", color)  
@@ -53,8 +53,11 @@ def render_glyph(matrix, colors, loc, ppd=37):
       glyph[i*ppd:(i+1)*ppd, (10 - c - 1)*ppd:(10-c)*ppd] = fill_style
 
   img[3*ppd:13*ppd, 3*ppd:13*ppd] = glyph
+  
+  if loc is not None:
+    Image.fromarray(img, 'RGB').save(f'{loc}.png')
 
-  Image.fromarray(img, 'RGB').save(f'{loc}.png')
+  return img
 
 #----------------------------------------------------------------------------
 
